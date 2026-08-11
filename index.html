@@ -1,334 +1,1944 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEAUTY PRIME | 대한민국 대표 헤어 뷰티 브랜드</title>
-    <!-- 나눔고딕 웹폰트 적용 -->
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* CSS 스타일 설정 */
-        :root {
-            --bg-beige: #F4F1EA;
-            --bg-light-gray: #E5E5E5;
-            --text-dark: #333333;
-            --text-gray: #666666;
-            --accent-gray: #8C8C8C;
-            --white: #FFFFFF;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<title>HAIR BEAUTY | 아름다움을 디자인하다</title>
+<meta name="description" content="대한민국 헤어뷰티 전문 브랜드 HAIR BEAUTY">
 
-        body {
-            font-family: 'Nanum Gothic', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-beige);
-            line-height: 1.6;
-        }
+<!-- Nanum Gothic -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
 
-        /* 네비게이션 책갈피 메뉴 */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(244, 241, 234, 0.95);
-            backdrop-filter: blur(5px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            z-index: 1000;
-            border-bottom: 1px solid #ddd;
-        }
+<style>
 
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--text-dark);
-        }
+/* =====================================================
+   BASIC
+===================================================== */
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
+:root {
+    --beige: #eee5dc;
+    --beige-dark: #d8c5b4;
+    --cream: #faf8f5;
+    --gray: #77716c;
+    --dark: #34302d;
+    --line: #ddd4cc;
+    --white: #ffffff;
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-gray);
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        nav ul li a:hover {
-            color: var(--text-dark);
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* 공통 구역 스타일 */
-        section {
-            padding: 120px 20px 80px 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+body {
+    font-family: "Nanum Gothic", sans-serif;
+    color: var(--dark);
+    background: var(--cream);
+    line-height: 1.7;
+}
 
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        .section-desc {
-            font-size: 1.05rem;
-            color: var(--text-gray);
-            margin-bottom: 50px;
-            max-width: 600px;
-        }
+button {
+    font-family: inherit;
+}
 
-        /* 구역별 배경 교차 (베이지 & 그레이) */
-        .bg-beige {
-            background-color: var(--bg-beige);
-        }
+.wrap {
+    width: min(calc(100% - 40px), 1200px);
+    margin: auto;
+}
 
-        .bg-gray {
-            background-color: var(--bg-light-gray);
-        }
+section {
+    scroll-margin-top: 78px;
+    padding: 105px 0;
+}
 
-        /* 히어로 섹션 */
-        #hero {
-            background: linear-gradient(135deg, var(--bg-beige) 50%, var(--bg-light-gray) 50%);
-        }
 
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 30px;
-        }
+.nav {
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 auto;
+    height: 78px;
 
-        .cta-btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background-color: var(--text-dark);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
+    background: rgba(250,248,245,0.92);
+    backdrop-filter: blur(14px);
 
-        .cta-btn:hover {
-            background-color: var(--accent-gray);
-        }
+    border-bottom: 1px solid rgba(52,48,45,0.08);
 
-        /* 스타일 카드 그리드 레이아웃 */
-        .style-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            width: 100%;
-            max-width: 1000px;
-            padding: 0 20px;
-        }
+    transition: 0.3s;
+}
 
-        .style-card {
-            background-color: var(--white);
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.nav.scrolled {
+    box-shadow: 0 8px 30px rgba(52,48,45,0.08);
+}
 
-        .style-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
+.nav-inner {
+    height: 100%;
 
-        .style-card h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .style-card p {
-            font-size: 0.95rem;
-            color: var(--text-gray);
-        }
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
 
-        /* 푸터 */
-        footer {
-            background-color: #222;
-            color: #aaa;
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-        }
+.logo small {
+    display: block;
 
-        /* 스크롤 애니메이션 초기 상태 (JS 연동) */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
+    margin-top: -5px;
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    color: var(--gray);
 
-        /* 반응형 디자인 */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 10px;
-            }
-            nav ul {
-                gap: 15px;
-            }
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.menu {
+    display: flex;
+    gap: 23px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.menu a {
+    transition: 0.25s;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+
+.nav-btn {
+    padding: 9px 19px;
+
+    border: 1px solid var(--dark);
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: var(--dark);
+    color: white;
+}
+
+
+/* =====================================================
+   RIGHT BOOKMARK
+===================================================== */
+
+.bookmarks {
+    position: fixed;
+
+    right: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bookmark {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    border: 1px solid var(--line);
+
+    background: rgba(255,255,255,0.8);
+
+    color: var(--gray);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.bookmark:hover,
+.bookmark.active {
+    background: var(--dark);
+    color: white;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+    padding-top: 78px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 680px;
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-right: 60px;
+}
+
+.eyebrow {
+    margin-bottom: 17px;
+
+    color: #9a806b;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(45px, 5vw, 70px);
+    line-height: 1.1;
+
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    font-weight: 400;
+}
+
+.desc {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+
+    padding: 13px 27px;
+
+    border-radius: 3px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(52,48,45,0.12);
+}
+
+.dark {
+    background: var(--dark);
+    color: white;
+}
+
+.light {
+    border: 1px solid var(--dark);
+}
+
+.stats {
+    display: flex;
+    gap: 28px;
+
+    margin-top: 40px;
+}
+
+.stats strong {
+    display: block;
+
+    font-size: 22px;
+}
+
+.stats small {
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-image {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e3d3c7,
+            #aa907d
+        );
+}
+
+.hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7% 10% 0;
+
+    background:
+        radial-gradient(
+            ellipse at 53% 25%,
+            #f5e9df 0 14%,
+            transparent 14.5%
+        ),
+        linear-gradient(
+            115deg,
+            transparent 34%,
+            #755b49 35% 52%,
+            transparent 53%
+        ),
+        linear-gradient(
+            75deg,
+            transparent 47%,
+            #8b6b56 48% 68%,
+            transparent 69%
+        );
+
+    border-radius: 48% 48% 0 0;
+}
+
+.hero-image::after {
+    content: "HAIR BEAUTY";
+
+    position: absolute;
+
+    left: 30px;
+    bottom: 28px;
+
+    color: white;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-head {
+    text-align: center;
+
+    margin-bottom: 43px;
+}
+
+.label {
+    margin-bottom: 9px;
+
+    color: #9a806b;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-head h2 {
+    font-size: 38px;
+    line-height: 1.25;
+
+    letter-spacing: -2px;
+}
+
+.section-head p {
+    margin-top: 10px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about {
+    background: var(--beige);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-copy {
+    padding: 50px 60px 50px 0;
+}
+
+.about-copy h2 {
+    font-size: 40px;
+    line-height: 1.25;
+
+    letter-spacing: -2px;
+}
+
+.about-copy p {
+    margin: 18px 0 27px;
+
+    color: #68615c;
+
+    font-size: 13px;
+}
+
+.about-image {
+    min-height: 420px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e3d3c7,
+            #aa907d
+        );
+}
+
+.about-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 14%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #eadfd6,
+            #a88d79
+        );
+
+    box-shadow:
+        inset 0 0 0 18px rgba(255,255,255,0.2);
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 12px;
+
+    margin-top: 32px;
+}
+
+.about-stats strong {
+    display: block;
+
+    font-size: 23px;
+}
+
+.about-stats span {
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   HAIR STYLE
+===================================================== */
+
+.hairstyle,
+.service,
+.portfolio {
+    background: white;
+}
+
+.style-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 14px;
+}
+
+.style-card {
+    background: var(--cream);
+
+    border: 1px solid var(--line);
+
+    transition: 0.4s;
+}
+
+.style-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(52,48,45,0.10);
+}
+
+.style-photo {
+    height: 335px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e4d7cc,
+            #b9a392
+        );
+}
+
+.style-photo::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8% 17% 0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 20%,
+            #eadbd0 0 15%,
+            transparent 15.5%
+        ),
+        radial-gradient(
+            ellipse at 50% 31%,
+            #96735e 0 17%,
+            transparent 17.5%
+        ),
+        linear-gradient(
+            105deg,
+            transparent 28%,
+            #765949 29% 45%,
+            transparent 46%
+        ),
+        linear-gradient(
+            75deg,
+            transparent 52%,
+            #765949 53% 69%,
+            transparent 70%
+        );
+
+    border-radius: 48% 48% 10% 10%;
+}
+
+.style-card:nth-child(2)
+.style-photo::before {
+    transform: scale(0.88);
+}
+
+.style-card:nth-child(3)
+.style-photo::before {
+    transform: scale(0.78);
+    filter: grayscale(0.2);
+}
+
+.style-card:nth-child(4)
+.style-photo::before {
+    transform: scale(0.9);
+}
+
+.style-info {
+    padding: 21px;
+}
+
+.style-info h3 {
+    font-size: 18px;
+}
+
+.style-info p,
+.style-info a {
+    color: var(--gray);
+
+    font-size: 11px;
+}
+
+.style-info a {
+    display: inline-block;
+
+    margin-top: 13px;
+
+    color: var(--dark);
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   SERVICE
+===================================================== */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.service-card {
+    padding: 33px 10px;
+
+    text-align: center;
+
+    border-right: 1px solid var(--line);
+}
+
+.service-card:last-child {
+    border-right: 0;
+}
+
+.icon {
+    color: #9a806b;
+
+    font-size: 26px;
+}
+
+.service-card h3 {
+    font-size: 14px;
+}
+
+.service-card p {
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.process {
+    background: var(--beige);
+}
+
+.process-list {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.process-item {
+    position: relative;
+
+    padding: 0 18px;
+
+    text-align: center;
+}
+
+.process-item:not(:last-child)::after {
+    content: "→";
+
+    position: absolute;
+
+    top: 13px;
+    right: -7px;
+
+    color: #9a806b;
+}
+
+.process-num {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto auto 15px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.process-item h3 {
+    font-size: 15px;
+}
+
+.process-item p {
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   PORTFOLIO
+===================================================== */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+
+    gap: 12px;
+}
+
+.portfolio-item {
+    height: 295px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e1d3c8,
+            #ad9583
+        );
+}
+
+.portfolio-item::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8% 18% 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8ddd5,
+            #896f5f
+        );
+
+    border-radius: 45% 45% 0 0;
+
+    transition: 0.5s;
+}
+
+.portfolio-item:hover::before {
+    transform: scale(1.08);
+}
+
+.portfolio-item span {
+    position: absolute;
+
+    left: 14px;
+    bottom: 13px;
+
+    color: white;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 2px 8px #4a3d35;
+}
+
+.more {
+    margin-top: 27px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   REVIEW
+===================================================== */
+
+.review {
+    background: var(--cream);
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.review-card {
+    min-height: 210px;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid var(--line);
+}
+
+.stars {
+    margin-bottom: 18px;
+
+    color: #9a806b;
+
+    letter-spacing: 3px;
+}
+
+.review-card p {
+    font-size: 13px;
+}
+
+.review-card small {
+    display: block;
+
+    margin-top: 22px;
+
+    color: #999;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+    background: var(--beige-dark);
+
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 46px;
+    line-height: 1.25;
+
+    letter-spacing: -2px;
+}
+
+.contact p {
+    margin: 12px 0 27px;
+
+    color: #665c55;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 32px 0;
+
+    background: #55504c;
+
+    color: #e7e1dc;
+
+    font-size: 10px;
+}
+
+.footer-inner {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.footer-inner strong {
+    font-size: 16px;
+}
+
+.footer-inner div:last-child {
+    color: #d1c8c1;
+
+    text-align: right;
+}
+
+
+/* =====================================================
+   SCROLL ANIMATION
+===================================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.d1 {
+    transition-delay: 0.12s;
+}
+
+.d2 {
+    transition-delay: 0.24s;
+}
+
+.d3 {
+    transition-delay: 0.36s;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:950px) {
+
+    .menu,
+    .nav-btn {
+        display: none;
+    }
+
+    .bookmarks {
+        display: none;
+    }
+
+    .hero-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+        padding: 80px 0 50px;
+    }
+
+    .hero-image {
+        min-height: 500px;
+    }
+
+    .style-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .process-list {
+        grid-template-columns: 1fr;
+    }
+
+    .process-item {
+        padding: 20px;
+
+        border-bottom: 1px solid rgba(52,48,45,0.08);
+    }
+
+    .process-item::after {
+        display: none;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px) {
+
+    .wrap {
+        width: calc(100% - 28px);
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .stats {
+        gap: 13px;
+    }
+
+    .style-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .style-photo {
+        height: 320px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .portfolio-item {
+        height: 225px;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .contact h2 {
+        font-size: 38px;
+    }
+
+    .footer-inner {
+        display: block;
+    }
+
+    .footer-inner div:last-child {
+        margin-top: 12px;
+
+        text-align: left;
+    }
+}
+
+</style>
 </head>
+
+
 <body>
 
-    <!-- 헤더 & 책갈피 네비게이션 -->
-    <header>
-        <div class="logo">BEAUTY PRIME</div>
-        <nav>
-            <ul>
-                <li><a href="#hero">홈</a></li>
-                <li><a href="#long">긴머리</a></li>
-                <li><a href="#medium">중간머리</a></li>
-                <li><a href="#short">단발머리</a></li>
-                <li><a href="#upstyle">업스타일</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- 1. 메인 홈 구역 (누드 베이지) -->
-    <section id="hero" class="bg-beige">
-        <div class="hero-content reveal">
-            <h1>대한민국 No.1 헤어 뷰티 서비스<br>뷰티 프라임</h1>
-            <p>당신만의 독보적인 분위기를 완성하는 프리미엄 헤어 스타일링</p>
-            <a href="#long" class="cta-btn">스타일 둘러보기</a>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="nav" id="nav">
+
+    <div class="wrap nav-inner">
+
+        <a class="logo" href="#home">
+            HAIR BEAUTY
+            <small>헤어뷰티</small>
+        </a>
+
+        <div class="menu">
+            <a href="#home">홈</a>
+            <a href="#about">회사소개</a>
+            <a href="#hairstyle">헤어스타일</a>
+            <a href="#service">서비스</a>
+            <a href="#process">프로세스</a>
+            <a href="#portfolio">포트폴리오</a>
+            <a href="#review">고객후기</a>
+            <a href="#contact">문의하기</a>
         </div>
-    </section>
 
-    <!-- 2. 긴머리 구역 (그레이) -->
-    <section id="long" class="bg-gray">
-        <h2 class="section-title reveal">LONG HAIR STYLE</h2>
-        <p class="section-desc reveal">우아함과 내추럴함을 동시에 살리는 롱 웨이브 및 레이어드 컷 스타일</p>
-        <div class="style-grid reveal">
-            <div class="style-card">
-                <h3>글램 레이어드 펌</h3>
-                <p>풍성한 볼륨감과 흐르는 듯한 S컬로 여성스러운 매력을 극대화합니다.</p>
+        <a class="nav-btn" href="#contact">
+            예약하기
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BOOKMARK
+===================================================== -->
+
+<div class="bookmarks">
+
+    <button class="bookmark active" data-target="home">01</button>
+    <button class="bookmark" data-target="about">02</button>
+    <button class="bookmark" data-target="hairstyle">03</button>
+    <button class="bookmark" data-target="service">04</button>
+    <button class="bookmark" data-target="process">05</button>
+    <button class="bookmark" data-target="portfolio">06</button>
+    <button class="bookmark" data-target="review">07</button>
+    <button class="bookmark" data-target="contact">08</button>
+
+</div>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="wrap hero-grid">
+
+        <div class="hero-copy reveal">
+
+            <div class="eyebrow">
+                대한민국 NO.1 HAIR BEAUTY BRAND
             </div>
-            <div class="style-card">
-                <h3>실키 스트레이트</h3>
-                <p>결이 살아있는 차분하고 고급스러운 윤기 나는 생머리 스타일입니다.</p>
+
+            <h1>
+                헤어뷰티,<br>
+                <span>아름다움을 디자인하다.</span>
+            </h1>
+
+            <p class="desc">
+                최고의 디자이너와 프리미엄 서비스로<br>
+                당신의 하루를 특별하게 만들어드립니다.
+            </p>
+
+            <div class="actions">
+
+                <a class="btn dark" href="#contact">
+                    예약하기
+                </a>
+
+                <a class="btn light" href="#hairstyle">
+                    스타일 둘러보기
+                </a>
+
             </div>
+
+            <div class="stats">
+
+                <div>
+                    <strong>20년+</strong>
+                    <small>뷰티 노하우</small>
+                </div>
+
+                <div>
+                    <strong>1,000+</strong>
+                    <small>전문 디자이너</small>
+                </div>
+
+                <div>
+                    <strong>200+</strong>
+                    <small>전국 지점</small>
+                </div>
+
+                <div>
+                    <strong>100만+</strong>
+                    <small>누적 고객</small>
+                </div>
+
+            </div>
+
         </div>
-    </section>
 
-    <!-- 3. 중간머리 구역 (누드 베이지) -->
-    <section id="medium" class="bg-beige">
-        <h2 class="section-title reveal">MEDIUM HAIR STYLE</h2>
-        <p class="section-desc reveal">어중간한 길이를 트렌디하게 소화하는 빌드펌과 허쉬컷 스타일</p>
-        <div class="style-grid reveal">
-            <div class="style-card">
-                <h3>빌드 펌</h3>
-                <p>C컬과 S컬이 조화롭게 어우러져 세련된 실루엣을 연출합니다.</p>
+
+        <div class="hero-image reveal d1"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
+    <div class="wrap about-grid">
+
+        <div class="about-copy reveal">
+
+            <div class="label">
+                02 / ABOUT US
             </div>
-            <div class="style-card">
-                <h3>모던 바디펌</h3>
-                <p>자연스러운 C컬로 단정하면서도 세련된 분위기를 선사합니다.</p>
+
+            <h2>
+                대한민국 최대 규모의<br>
+                헤어뷰티 전문 기업
+            </h2>
+
+            <p>
+                전국 주요 지역에서 최고의 디자이너와 함께
+                고객의 라이프스타일에 맞는 아름다움을 제안합니다.
+            </p>
+
+            <a class="btn dark" href="#contact">
+                더 알아보기
+            </a>
+
+
+            <div class="about-stats">
+
+                <div>
+                    <strong>200+</strong>
+                    <span>전국 지점</span>
+                </div>
+
+                <div>
+                    <strong>1,000+</strong>
+                    <span>전문 디자이너</span>
+                </div>
+
+                <div>
+                    <strong>100만+</strong>
+                    <span>누적 고객</span>
+                </div>
+
+                <div>
+                    <strong>20년+</strong>
+                    <span>뷰티 노하우</span>
+                </div>
+
             </div>
+
         </div>
-    </section>
 
-    <!-- 4. 단발머리 구역 (그레이) -->
-    <section id="short" class="bg-gray">
-        <h2 class="section-title reveal">SHORT & BOB STYLE</h2>
-        <p class="section-desc reveal">목선을 가늘고 길어 보이게 만드는 도회적인 단발 및 숏컷 스타일</p>
-        <div class="style-grid reveal">
-            <div class="style-card">
-                <h3>테슬 컷</h3>
-                <p>가벼운 질감 처리로 시크하고 트렌디한 느낌을 주는 단발 스타일입니다.</p>
+
+        <div class="about-image reveal d1"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HAIRSTYLE
+===================================================== -->
+
+<section class="hairstyle" id="hairstyle">
+
+    <div class="wrap">
+
+        <div class="section-head reveal">
+
+            <div class="label">
+                03 / HAIR STYLE
             </div>
-            <div class="style-card">
-                <h3>태슬 보니펌</h3>
-                <p>동글동글 귀여우면서도 세련된 매력을 동시에 주는 베이직 펌입니다.</p>
-            </div>
+
+            <h2>
+                헤어스타일
+            </h2>
+
+            <p>
+                당신에게 가장 잘 어울리는 스타일을 찾아보세요.
+            </p>
+
         </div>
-    </section>
 
-    <!-- 5. 업스타일 구역 (누드 베이지) -->
-    <section id="upstyle" class="bg-beige">
-        <h2 class="section-title reveal">UPSTYLE & SPECIAL</h2>
-        <p class="section-desc reveal">특별한 날, 가장 빛나는 순간을 위한 품격 있는 웨딩 및 업스타일</p>
-        <div class="style-grid reveal">
-            <div class="style-card">
-                <h3>클래식 로우번</h3>
-                <p>단정하고 우결이 살아있는 로우업 스타일로 격식 있는 자리에 제격입니다.</p>
-            </div>
-            <div class="style-card">
-                <h3>내추럴 포니테일</h3>
-                <p>잔머리까지 섬세하게 연출하여 세련되고 캐주얼한 매력을 줍니다.</p>
-            </div>
+
+        <div class="style-grid">
+
+
+            <article class="style-card reveal">
+
+                <div class="style-photo"></div>
+
+                <div class="style-info">
+
+                    <h3>
+                        긴머리 스타일
+                    </h3>
+
+                    <p>
+                        여신같은 롱헤어 스타일
+                    </p>
+
+                    <a href="#contact">
+                        더보기 →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="style-card reveal d1">
+
+                <div class="style-photo"></div>
+
+                <div class="style-info">
+
+                    <h3>
+                        중간머리 스타일
+                    </h3>
+
+                    <p>
+                        세련되고 자연스러운 중간머리
+                    </p>
+
+                    <a href="#contact">
+                        더보기 →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="style-card reveal d2">
+
+                <div class="style-photo"></div>
+
+                <div class="style-info">
+
+                    <h3>
+                        단발머리 스타일
+                    </h3>
+
+                    <p>
+                        시크하고 트렌디한 단발
+                    </p>
+
+                    <a href="#contact">
+                        더보기 →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="style-card reveal d3">
+
+                <div class="style-photo"></div>
+
+                <div class="style-info">
+
+                    <h3>
+                        업스타일
+                    </h3>
+
+                    <p>
+                        특별한 날을 위한 업스타일
+                    </p>
+
+                    <a href="#contact">
+                        더보기 →
+                    </a>
+
+                </div>
+
+            </article>
+
+
         </div>
-    </section>
 
-    <!-- 푸터 -->
-    <footer>
-        <p>&copy; 2026 BEAUTY PRIME. All Rights Reserved.</p>
-    </footer>
+    </div>
 
-    <!-- 움직임 효과 JavaScript -->
-    <script>
-        // 스크롤 시 요소가 부드럽게 나타나는 페이드인 효과 (Intersection Observer)
-        document.addEventListener("DOMContentLoaded", function() {
-            const reveals = document.querySelectorAll(".reveal");
+</section>
 
-            const revealOnScroll = function(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("active");
-                    }
-                });
-            };
 
-            const observerOptions = {
-                root: null,
-                threshold: 0.15
-            };
+<!-- =====================================================
+     SERVICE
+===================================================== -->
 
-            const observer = new IntersectionObserver(revealOnScroll, observerOptions);
+<section class="service" id="service">
 
-            reveals.forEach(reveal => {
-                observer.observe(reveal);
+    <div class="wrap">
+
+        <div class="section-head reveal">
+
+            <div class="label">
+                04 / SERVICE
+            </div>
+
+            <h2>
+                서비스
+            </h2>
+
+            <p>
+                프리미엄 헤어뷰티 서비스를 경험해보세요.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <div class="service-card reveal">
+
+                <div class="icon">✂</div>
+
+                <h3>커트</h3>
+
+                <p>
+                    얼굴형과 라이프스타일에 맞춘 커트
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal d1">
+
+                <div class="icon">◉</div>
+
+                <h3>컬러</h3>
+
+                <p>
+                    트렌디하고 건강한 프리미엄 컬러
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal d2">
+
+                <div class="icon">〰</div>
+
+                <h3>펌</h3>
+
+                <p>
+                    자연스럽고 탄력있는 디자인 펌
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal d3">
+
+                <div class="icon">♢</div>
+
+                <h3>클리닉</h3>
+
+                <p>
+                    손상된 모발을 위한 맞춤 클리닉
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="icon">❧</div>
+
+                <h3>두피케어</h3>
+
+                <p>
+                    건강한 두피를 위한 전문 케어
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal d1">
+
+                <div class="icon">✦</div>
+
+                <h3>웨딩 / 업스타일</h3>
+
+                <p>
+                    특별한 날을 위한 토탈 스타일링
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="process" id="process">
+
+    <div class="wrap">
+
+        <div class="section-head reveal">
+
+            <div class="label">
+                05 / PROCESS
+            </div>
+
+            <h2>
+                프로세스
+            </h2>
+
+            <p>
+                체계적인 시스템으로 완성도 높은 스타일을 제공합니다.
+            </p>
+
+        </div>
+
+
+        <div class="process-list">
+
+
+            <div class="process-item reveal">
+
+                <div class="process-num">
+                    01
+                </div>
+
+                <h3>
+                    상담
+                </h3>
+
+                <p>
+                    고객의 니즈를 파악합니다.
+                </p>
+
+            </div>
+
+
+            <div class="process-item reveal d1">
+
+                <div class="process-num">
+                    02
+                </div>
+
+                <h3>
+                    디자인
+                </h3>
+
+                <p>
+                    맞춤 디자인을 제안합니다.
+                </p>
+
+            </div>
+
+
+            <div class="process-item reveal d2">
+
+                <div class="process-num">
+                    03
+                </div>
+
+                <h3>
+                    시술
+                </h3>
+
+                <p>
+                    정성껏 시술합니다.
+                </p>
+
+            </div>
+
+
+            <div class="process-item reveal d3">
+
+                <div class="process-num">
+                    04
+                </div>
+
+                <h3>
+                    스타일링
+                </h3>
+
+                <p>
+                    스타일링 방법을 안내합니다.
+                </p>
+
+            </div>
+
+
+            <div class="process-item reveal">
+
+                <div class="process-num">
+                    05
+                </div>
+
+                <h3>
+                    사후관리
+                </h3>
+
+                <p>
+                    다음 방문까지 케어합니다.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PORTFOLIO
+===================================================== -->
+
+<section class="portfolio" id="portfolio">
+
+    <div class="wrap">
+
+        <div class="section-head reveal">
+
+            <div class="label">
+                06 / PORTFOLIO
+            </div>
+
+            <h2>
+                포트폴리오
+            </h2>
+
+            <p>
+                헤어뷰티와 함께한 고객들의 변화를 확인하세요.
+            </p>
+
+        </div>
+
+
+        <div class="portfolio-grid">
+
+
+            <div class="portfolio-item reveal">
+                <span>LONG HAIR</span>
+            </div>
+
+            <div class="portfolio-item reveal d1">
+                <span>LONG LAYER</span>
+            </div>
+
+            <div class="portfolio-item reveal d2">
+                <span>BOB</span>
+            </div>
+
+            <div class="portfolio-item reveal d3">
+                <span>UP STYLE</span>
+            </div>
+
+            <div class="portfolio-item reveal d1">
+                <span>WAVE</span>
+            </div>
+
+            <div class="portfolio-item reveal d2">
+                <span>SHORT BOB</span>
+            </div>
+
+
+        </div>
+
+
+        <div class="more">
+
+            <a class="btn light" href="#contact">
+                더 많은 스타일 보기
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     REVIEW
+===================================================== -->
+
+<section class="review" id="review">
+
+    <div class="wrap">
+
+        <div class="section-head reveal">
+
+            <div class="label">
+                07 / REVIEW
+            </div>
+
+            <h2>
+                고객후기
+            </h2>
+
+            <p>
+                고객님들의 만족스러운 후기를 확인하세요.
+            </p>
+
+        </div>
+
+
+        <div class="review-grid">
+
+
+            <article class="review-card reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “디자이너 선생님이 제 얼굴형에 맞는
+                    스타일을 정말 잘 찾아주셨어요.
+                    인생머리 만났습니다!”
+                </p>
+
+                <small>
+                    김○○ 고객
+                </small>
+
+            </article>
+
+
+            <article class="review-card reveal d1">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “서비스도 너무 좋고,
+                    매장 분위기도 고급스러워요.
+                    앞으로도 계속 방문할 예정입니다.”
+                </p>
+
+                <small>
+                    이○○ 고객
+                </small>
+
+            </article>
+
+
+            <article class="review-card reveal d2">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “웨딩 업스타일을 정말 예쁘게 해주셔서
+                    결혼식 당일 정말 행복했어요!”
+                </p>
+
+                <small>
+                    박○○ 고객
+                </small>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="wrap reveal">
+
+        <div class="label">
+            08 / CONTACT
+        </div>
+
+        <h2>
+            지금 바로<br>
+            아름다움을 경험하세요
+        </h2>
+
+        <p>
+            전국 가까운 헤어뷰티 매장에서
+            당신을 기다리고 있습니다.
+        </p>
+
+        <a class="btn dark" href="tel:02-1234-5678">
+            02-1234-5678 · 예약 문의
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="wrap footer-inner">
+
+        <div>
+
+            <strong>
+                HAIR BEAUTY
+            </strong>
+
+            <br>
+
+            헤어뷰티
+
+        </div>
+
+
+        <div>
+
+            대표전화 02-1234-5678 · 전국 지점 안내
+
+            <br>
+
+            © 2026 HAIR BEAUTY.
+            All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   NAV SCROLL
+===================================================== */
+
+const nav = document.getElementById("nav");
+
+const sections =
+    [...document.querySelectorAll("main section[id]")];
+
+const bookmarks =
+    [...document.querySelectorAll(".bookmark")];
+
+
+window.addEventListener("scroll", () => {
+
+    nav.classList.toggle(
+        "scrolled",
+        window.scrollY > 20
+    );
+
+
+    let current = "home";
+
+
+    sections.forEach(section => {
+
+        if (
+            window.scrollY >=
+            section.offsetTop - 180
+        ) {
+            current = section.id;
+        }
+
+    });
+
+
+    bookmarks.forEach(bookmark => {
+
+        bookmark.classList.toggle(
+            "active",
+            bookmark.dataset.target === current
+        );
+
+    });
+
+});
+
+
+/* =====================================================
+   BOOKMARK CLICK
+===================================================== */
+
+bookmarks.forEach(bookmark => {
+
+    bookmark.addEventListener("click", () => {
+
+        const target =
+            document.getElementById(
+                bookmark.dataset.target
+            );
+
+        if (target) {
+
+            target.scrollIntoView({
+                behavior: "smooth"
             });
-        });
-    </script>
+
+        }
+
+    });
+
+});
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "show"
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+
 </body>
 </html>
